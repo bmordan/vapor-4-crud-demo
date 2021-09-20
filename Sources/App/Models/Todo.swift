@@ -19,11 +19,11 @@ final class Todo: Model {
     var task: String
     
     @Field(key: "status")
-    var status: Int8
+    var status: UInt8
     
     init() { }
     
-    init(id: UUID? = nil, task: String, status: Int8 = 0) {
+    init(id: UUID? = nil, task: String, status: UInt8 = 0) {
         self.id = id
         self.task = task
         self.status = status
@@ -35,7 +35,7 @@ struct TodoMigration: Migration {
         return database.schema(Todo.schema)
             .id()
             .field("task", .string)
-            .field("status", .int8)
+            .field("status", .uint8)
             .create()
     }
     

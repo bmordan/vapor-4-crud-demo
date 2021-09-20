@@ -1,6 +1,6 @@
 import Vapor
 import Fluent
-import FluentSQLiteDriver
+import FluentPostgresDriver
 
 func routes(_ app: Application) throws {
     app.post("todos") {req -> EventLoopFuture<Todo> in
